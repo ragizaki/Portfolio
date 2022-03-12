@@ -6,7 +6,11 @@ import Navbar from './components/Navbar/Navbar';
 type Props = {};
 
 const App = (props: Props) => {
-    return <div></div>;
+    return (
+        <div>
+            <Navbar />
+        </div>
+    );
 };
 
 export default App;
