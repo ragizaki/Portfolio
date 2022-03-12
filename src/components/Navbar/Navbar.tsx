@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { animateScroll } from 'react-scroll';
 import { Nav, NavContainer, NavLogo, NavItems, NavItem, ResumeBtn, BurgerMenu } from './NavbarStyles';
-import { NavData } from '../../data';
+import { nav } from '../../data';
+import { NavLink } from '../../util/interfaces';
 import Resume from '../../assets/Resume.pdf';
 
 // Icon Configuration
@@ -22,15 +23,12 @@ const Navbar = (): JSX.Element => {
                 <NavContainer>
                     <NavLogo onClick={scrollToTop}>ZM.</NavLogo>
                     <NavItems>
-                        {NavData.map(item => (
+                        {nav.map((item: NavLink) => (
                             <NavItem id={item.id} key={item.key}>
                                 {item.value}
                             </NavItem>
                         ))}
                     </NavItems>
-                    <ResumeBtn href={Resume} target='_blank' rel='noreffer'>
-                        Open Resume
-                    </ResumeBtn>
                     <BurgerMenu onClick={onBurgerClick}>{isBurgerOpen ? <FaTimes /> : <FaBars />}</BurgerMenu>
                 </NavContainer>
             </IconContext.Provider>

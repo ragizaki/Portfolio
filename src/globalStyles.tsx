@@ -1,12 +1,11 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
+const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Red Hat Display', sans-serif;
+        font-family: 'Red Hat Display';
     }
 `;
 
@@ -24,4 +23,4 @@ export const Container = styled.div`
     }
 `;
 
-export default GlobalStyles;
+export default GlobalStyle;

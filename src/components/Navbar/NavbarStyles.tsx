@@ -3,7 +3,7 @@ import { Container } from '../../globalStyles';
 import { Link } from 'react-scroll';
 
 export const Nav = styled.nav`
-    background: #101522;
+    background: #fff;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -24,11 +24,12 @@ export const NavContainer = styled(Container)`
 `;
 
 export const NavLogo = styled.a`
-    color: white;
+    color: black;
     justify-self: flex-start;
     text-decoration: none;
     cursor: pointer;
     font-size: 1.5rem;
+    font-weight: bold;
 `;
 
 export const BurgerMenu = styled.div`
@@ -63,15 +64,16 @@ export const NavItems = styled.ul`
 `;
 
 export const NavItem = styled(Link)`
-    color: white;
+    color: black;
     text-transform: capitalize;
     margin-right: 30px;
     cursor: pointer;
     transition: all 200ms ease-in;
     font-size: 1.1rem;
+    font-weight: 500;
 
     &:hover {
-        color: gainsboro;
+        opacity: 0.6;
     }
 `;
 

@@ -4,6 +4,7 @@ import GlobalStyles from './globalStyles';
 
 // Components
 import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
 
 type Props = {};
 
@@ -12,6 +13,7 @@ const App = (props: Props) => {
         <div>
             <GlobalStyles />
             <Navbar />
+            <Home />
         </div>
     );
 };
