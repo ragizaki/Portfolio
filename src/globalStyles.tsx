@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap');
     * {
         margin: 0;
@@ -24,4 +24,4 @@ export const Container = styled.div`
     }
 `;
 
-export default GlobalStyle;
+export default GlobalStyles;
