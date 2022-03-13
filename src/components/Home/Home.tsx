@@ -1,17 +1,31 @@
-import { home } from '../../data';
-import { HomeContainer, Heading, TagItem } from './HomeStyles';
-import { Tag } from '../../util/interfaces';
+import { homeData } from '../../data';
+import { HomeContainer, Heading, TagItem, Socials } from './HomeStyles';
+import { Button } from '../../styles/globalStyles';
+import Navbar from '../Navbar/Navbar';
 
-type Props = {};
-
-const Home = (props: Props) => {
+const Home = () => {
+    const { heading, socials, position, company } = homeData;
     return (
-        <HomeContainer>
-            <Heading>{home.heading}</Heading>
-            {home.tags.map(({ id, value }: Tag) => (
-                <TagItem key={id}>{value}</TagItem>
-            ))}
-        </HomeContainer>
+        <>
+            <Navbar />
+            <HomeContainer>
+                <Heading>{heading}</Heading>
+                <TagItem>
+                    Hey there, welcome to my website! I'm a second year Computer Science student at UWaterloo.
+                </TagItem>
+                <TagItem>
+                    I'm currently interning at <strong>{company}</strong> as a <strong>{position}</strong>.
+                </TagItem>
+                <TagItem>Feel free to reach out or check my work at the socials below!</TagItem>
+                <Socials>
+                    {socials.map(social => (
+                        <Button secondary={social.secondary} key={social.id} href={social.href} target='_blank'>
+                            {social.icon} {social.platform}
+                        </Button>
+                    ))}
+                </Socials>
+            </HomeContainer>
+        </>
     );
 };
 
