@@ -7,8 +7,6 @@ export const HomeContainer = styled(Container)`
     justify-content: start;
     padding-top: 3rem;
     height: calc(100vh - 80px);
-
-    ${Container}
 `;
 
 export const Heading = styled.h1`
@@ -30,6 +28,7 @@ export const TagItem = styled.p`
 
     @media screen and (max-width: 960px) {
         padding: 0 20px;
+        line-height: 40px;
     }
 `;
 

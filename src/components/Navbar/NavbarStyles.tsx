@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container } from '../../styles/globalStyles';
+import { Container, Button } from '../../styles/globalStyles';
 import { Link } from 'react-scroll';
 
 export const Nav = styled.nav`
@@ -20,7 +20,6 @@ export const NavContainer = styled(Container)`
     align-items: center;
     height: 80px;
     padding: 0 70px;
-    ${Container};
 `;
 
 export const NavLogo = styled.a`
@@ -69,7 +68,7 @@ export const NavItems = styled.ul`
     } */
 `;
 
-export const NavItem = styled(Link)`
+export const NavItem = styled(Link)<{ to: string }>`
     color: black;
     text-transform: capitalize;
     margin-right: 30px;
@@ -82,4 +81,8 @@ export const NavItem = styled(Link)`
         opacity: 0.6;
         transform: translateY(-10%);
     }
+`;
+
+export const ResumeButton = styled(Button)`
+    font-size: 0.9rem;
 `;
