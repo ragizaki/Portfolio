@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { animateScroll } from 'react-scroll';
 import { Nav, NavContainer, NavLogo, NavItems, NavItem, BurgerMenu, ResumeButton } from './NavbarStyles';
-import { Button } from '../../styles/globalStyles';
 import { navData } from '../../data';
 import Resume from '../../assets/Resume.pdf';
 
