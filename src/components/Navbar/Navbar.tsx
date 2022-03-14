@@ -19,10 +19,11 @@ import { IconContext } from 'react-icons/lib';
 import { ThemeContext } from 'styled-components';
 
 interface Props {
+    isDark: boolean;
     toggleTheme: () => void;
 }
 
-const Navbar = ({ toggleTheme }: Props): JSX.Element => {
+const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
     const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
     const theme = useContext(ThemeContext);
 
@@ -44,7 +45,7 @@ const Navbar = ({ toggleTheme }: Props): JSX.Element => {
                             Open Resume
                         </ResumeButton>
                     </NavItems>
-                    <ThemeToggle type='checkbox' onClick={toggleTheme} />
+                    <ThemeToggle type='checkbox' onChange={toggleTheme} checked={isDark} />
                     <BurgerMenu onClick={onBurgerClick}>{isBurgerOpen ? <FaTimes /> : <FaBars />}</BurgerMenu>
                 </NavContainer>
             </IconContext.Provider>

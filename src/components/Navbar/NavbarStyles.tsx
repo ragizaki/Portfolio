@@ -95,7 +95,7 @@ export const ThemeToggle = styled.input<{ theme: Theme }>`
     background: ${props => props.theme.text};
     outline: 0;
     cursor: pointer;
-    transition: background-color 100ms ease-in-out;
+    transition: background-color 200ms ease-in-out;
     position: relative;
 
     &:checked {
@@ -111,7 +111,7 @@ export const ThemeToggle = styled.input<{ theme: Theme }>`
         position: absolute;
         transform: scale(0.7);
         left: 0;
-        transition: left 100ms ease-in-out;
+        transition: left 200ms ease-in-out;
     }
 
     &:checked:after {
