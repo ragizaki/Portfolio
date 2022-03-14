@@ -5,7 +5,7 @@ export const HomeContainer = styled(Container)`
     display: flex;
     flex-direction: column;
     justify-content: start;
-    padding-top: 3rem;
+    padding-top: 1rem;
     height: calc(100vh - 80px);
 `;
 
@@ -23,7 +23,8 @@ export const Heading = styled.h1`
 export const TagItem = styled.p`
     font-size: 1.5rem;
     text-decoration: capitalize;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    line-height: 2.3rem;
 
     @media screen and (max-width: 960px) {
         padding: 0 20px;

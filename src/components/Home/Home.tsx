@@ -14,11 +14,16 @@ const Home = ({ song }: HomeProps) => {
         <HomeContainer>
             <Heading>{heading}</Heading>
             <TagItem>
-                Hey there, welcome to my website! I'm a second year Computer Science student at UWaterloo.
+                Hey there, welcome to my website! I'm a second year Computer Science student at UWaterloo. I'm
+                currently interning at <strong>{company}</strong> as a <strong>{position}</strong>.
             </TagItem>
-            <TagItem>
-                I'm currently interning at <strong>{company}</strong> as a <strong>{position}</strong>.
-            </TagItem>
+            {song ? (
+                <>
+                    <TagItem>My most listened to song at the moment is:</TagItem>
+                    <RecentTrack song={song} />
+                </>
+            ) : null}
+
             <TagItem>Feel free to reach out or check my work at the socials below!</TagItem>
             <Socials>
                 {socials.map(social => (
@@ -27,7 +32,6 @@ const Home = ({ song }: HomeProps) => {
                     </Button>
                 ))}
             </Socials>
-            <RecenTrack song={song} />
         </HomeContainer>
     );
 };

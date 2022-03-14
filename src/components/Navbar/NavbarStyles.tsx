@@ -12,7 +12,6 @@ export const Nav = styled.nav`
     position: sticky;
     top: 0;
     z-index: 999;
-    border-bottom: 1px solid ${props => props.theme.background};
 `;
 
 export const NavContainer = styled(Container)`

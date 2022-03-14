@@ -1,4 +1,4 @@
-import React from 'react';
+import { TrackContainer, Image, SongInfo, SongArtists, SongTitle, Caption } from './RecentTrackStyles';
 import { Song } from '../../services/spotify';
 
 interface SongProps {
@@ -7,16 +7,17 @@ interface SongProps {
 
 const RecentTrack = ({ song }: SongProps): JSX.Element => {
     return (
-        <div>
+        <TrackContainer>
             {song ? (
                 <>
-                    <p>
-                        My most listened to song is {song.name} by {song.artists}
-                    </p>
-                    <img src={song.image} />
+                    <Image src={song?.image} />
+                    <SongInfo>
+                        <SongTitle>{song?.name}</SongTitle>
+                        <SongArtists>{song?.artists}</SongArtists>
+                    </SongInfo>
                 </>
             ) : null}
-        </div>
+        </TrackContainer>
     );
 };
 
