@@ -1,3 +1,4 @@
+import { Buffer } from 'buffer';
 const clientId = 'b9f66cf24cbe4874908781e3287ee9ca';
 const clientSecret = '394e840a395a4ca28fbade405f0d626f';
 
@@ -5,7 +6,7 @@ export const getToken = async (): Promise<string> => {
     const res = await fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
         headers: {
-            Authorization: 'Basic ' + btoa(clientId + ':' + clientSecret),
+            Authorization: 'Basic ' + Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
             'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: 'grant_type=client_credentials',
@@ -14,7 +15,7 @@ export const getToken = async (): Promise<string> => {
     return data.access_token;
 };
 
-export const getMostRecentSong = async (token: string) => {
+export const getMostRecentSong = async (token: string): Promise<Song> => {
     const res = await fetch('https://api.spotify.com/v1/me/top/tracks', {
         headers: {
             Accept: 'application/json',
