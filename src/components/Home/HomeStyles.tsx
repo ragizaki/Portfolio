@@ -10,9 +10,10 @@ export const HomeContainer = styled(Container)`
 `;
 
 export const Heading = styled.h1`
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: bold;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 1px;
 
     @media screen and (max-width: 960px) {
         font-size: 3rem;

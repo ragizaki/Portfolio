@@ -3,6 +3,7 @@ import { useState, useCallback, useEffect } from 'react';
 import GlobalStyles from './styles/globalStyles';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styles/theme';
+import { getMostRecentSong, Song } from './services/spotify';
 
 // Components
 import Navbar from './components/Navbar/Navbar';
@@ -16,6 +17,7 @@ const THEME: { key: string; light: string; dark: string } = {
 
 const App = (): JSX.Element => {
     const [isDark, setIsDark] = useState<boolean>(false);
+    const [song, setSong] = useState<Song | null>(null);
 
     useEffect(() => {
         if (localStorage) {
@@ -24,6 +26,17 @@ const App = (): JSX.Element => {
                 setIsDark(true);
             }
         }
+    }, []);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const song: Song = await getMostRecentSong();
+                setSong(song);
+            } catch (error) {
+                console.error(error);
+            }
+        })();
     }, []);
 
     window.addEventListener('beforeunload', () => {
@@ -37,7 +50,7 @@ const App = (): JSX.Element => {
             <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
                 <GlobalStyles />
                 <Navbar toggleTheme={toggleTheme} isDark={isDark} />
-                <Home />
+                <Home song={song} />
             </ThemeProvider>
         </div>
     );

@@ -34,7 +34,7 @@ const buttonStyles = css`
 
     padding: 7px 15px;
     margin-right: 10px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     border-radius: 20px;
 
     appearance: none;

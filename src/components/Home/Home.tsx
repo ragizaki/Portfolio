@@ -1,8 +1,14 @@
 import { homeData } from '../../data';
 import { HomeContainer, Heading, TagItem, Socials } from './HomeStyles';
 import { Button } from '../../styles/globalStyles';
+import { Song } from '../../services/spotify';
+import RecentTrack from '../RecentTrack/RecentTrack';
 
-const Home = () => {
+interface HomeProps {
+    song: Song | null;
+}
+
+const Home = ({ song }: HomeProps) => {
     const { heading, socials, position, company } = homeData;
     return (
         <HomeContainer>
@@ -21,6 +27,7 @@ const Home = () => {
                     </Button>
                 ))}
             </Socials>
+            <RecenTrack song={song} />
         </HomeContainer>
     );
 };
