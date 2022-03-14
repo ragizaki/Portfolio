@@ -3,7 +3,7 @@ import { useState, useCallback, useEffect } from 'react';
 import GlobalStyles from './styles/globalStyles';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styles/theme';
-import { getMostRecentSong, Song } from './services/spotify';
+import { getToken, getMostRecentSong, Song } from './services/spotify';
 
 // Components
 import Navbar from './components/Navbar/Navbar';
@@ -31,7 +31,8 @@ const App = (): JSX.Element => {
     useEffect(() => {
         (async () => {
             try {
-                const song: Song = await getMostRecentSong();
+                const token: string = await getToken();
+                const song: Song | null = await getMostRecentSong(token);
                 setSong(song);
             } catch (error) {
                 console.error(error);

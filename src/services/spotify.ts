@@ -1,12 +1,25 @@
-const TOKEN: string =
-    'BQA6wp3hv8N1Q_NIgiU8WGoIVRAsUCKZ15rbQlFkRBCRuinZkxkO_HVVtKQy6zOoOFAg8a1LefTVmaG-Ul-C8cPI0ERI0Mx6LyZhAX22E0CodP0IYbwK_Is9QXCxgle-SzTQMH4lczPkp2AY9dnrpXxsq0vP';
+const clientId = 'b9f66cf24cbe4874908781e3287ee9ca';
+const clientSecret = '394e840a395a4ca28fbade405f0d626f';
 
-export const getMostRecentSong = async () => {
-    const res = await fetch('https://api.spotify.com/v1/me/top/tracks?limit=1', {
+export const getToken = async (): Promise<string> => {
+    const res = await fetch('https://accounts.spotify.com/api/token', {
+        method: 'POST',
+        headers: {
+            Authorization: 'Basic ' + btoa(clientId + ':' + clientSecret),
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: 'grant_type=client_credentials',
+    });
+    const data = await res.json();
+    return data.access_token;
+};
+
+export const getMostRecentSong = async (token: string) => {
+    const res = await fetch('https://api.spotify.com/v1/me/top/tracks', {
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${TOKEN} `,
+            Authorization: `Bearer ${token}`,
         },
     });
     const data = await res.json();
