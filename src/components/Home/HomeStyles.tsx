@@ -12,7 +12,6 @@ export const HomeContainer = styled(Container)`
 export const Heading = styled.h1`
     font-size: 3.5rem;
     font-weight: bold;
-    color: black;
     margin-bottom: 1.5rem;
 
     @media screen and (max-width: 960px) {
@@ -23,7 +22,6 @@ export const Heading = styled.h1`
 export const TagItem = styled.p`
     font-size: 1.5rem;
     text-decoration: capitalize;
-    color: black;
     margin-bottom: 25px;
 
     @media screen and (max-width: 960px) {

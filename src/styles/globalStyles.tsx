@@ -1,12 +1,16 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
-import theme, { ThemeInterface } from './theme';
+import Theme from './theme';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         font-family: 'Red Hat Display';
+    }
+    html {
+        color: ${props => props.theme.text};
+        background: ${props => props.theme.body};
     }
 `;
 
@@ -43,7 +47,7 @@ const buttonStyles = css`
     }
 `;
 
-export const Button = styled.a<{ theme: ThemeInterface; secondary: boolean }>`
+export const Button = styled.a<{ theme: Theme; secondary: boolean }>`
     ${buttonStyles}
 
     color: ${props => (props.secondary ? props.theme.black : props.theme.white)};

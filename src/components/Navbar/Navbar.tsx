@@ -1,25 +1,37 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { animateScroll } from 'react-scroll';
-import { Nav, NavContainer, NavLogo, NavItems, NavItem, BurgerMenu, ResumeButton } from './NavbarStyles';
+import {
+    Nav,
+    NavContainer,
+    NavLogo,
+    NavItems,
+    NavItem,
+    BurgerMenu,
+    ResumeButton,
+    ThemeToggle,
+} from './NavbarStyles';
 import { navData } from '../../data';
 import Resume from '../../assets/Resume.pdf';
 
 // Icon Configuration
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
-import theme from '../../styles/theme';
+import { ThemeContext } from 'styled-components';
 
-type Props = {};
+interface Props {
+    toggleTheme: () => void;
+}
 
-const Navbar = (): JSX.Element => {
+const Navbar = ({ toggleTheme }: Props): JSX.Element => {
     const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
+    const theme = useContext(ThemeContext);
 
     const onBurgerClick = (): void => setIsBurgerOpen(prevOpen => !prevOpen);
 
     const scrollToTop = (): void => animateScroll.scrollToTop();
     return (
         <Nav>
-            <IconContext.Provider value={{ color: theme.white }}>
+            <IconContext.Provider value={{ color: theme.toggleBorder }}>
                 <NavContainer>
                     <NavLogo onClick={scrollToTop}>ZM.</NavLogo>
                     <NavItems>
@@ -32,6 +44,7 @@ const Navbar = (): JSX.Element => {
                             Open Resume
                         </ResumeButton>
                     </NavItems>
+                    <ThemeToggle type='checkbox' onClick={toggleTheme} />
                     <BurgerMenu onClick={onBurgerClick}>{isBurgerOpen ? <FaTimes /> : <FaBars />}</BurgerMenu>
                 </NavContainer>
             </IconContext.Provider>

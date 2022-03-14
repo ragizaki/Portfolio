@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { Container, Button } from '../../styles/globalStyles';
+import Theme from '../../styles/theme';
 import { Link } from 'react-scroll';
 
 export const Nav = styled.nav`
-    background: #fff;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -11,7 +11,8 @@ export const Nav = styled.nav`
     font-size: 1.2rem;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 999;
+    border-bottom: 1px solid ${props => props.theme.background};
 `;
 
 export const NavContainer = styled(Container)`
@@ -23,7 +24,6 @@ export const NavContainer = styled(Container)`
 `;
 
 export const NavLogo = styled.a`
-    color: black;
     justify-self: flex-start;
     text-decoration: none;
     cursor: pointer;
@@ -69,7 +69,6 @@ export const NavItems = styled.ul`
 `;
 
 export const NavItem = styled(Link)<{ to: string }>`
-    color: black;
     text-transform: capitalize;
     margin-right: 30px;
     cursor: pointer;
@@ -85,4 +84,37 @@ export const NavItem = styled(Link)<{ to: string }>`
 
 export const ResumeButton = styled(Button)`
     font-size: 0.9rem;
+`;
+
+export const ThemeToggle = styled.input<{ theme: Theme }>`
+    appearance: none;
+    -webkit-appearance: none;
+    width: 40px;
+    height: 20px;
+    border-radius: 3em;
+    background: ${props => props.theme.text};
+    outline: 0;
+    cursor: pointer;
+    transition: background-color 100ms ease-in-out;
+    position: relative;
+
+    &:checked {
+        background: ${props => props.theme.text};
+    }
+
+    &:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 3em;
+        background: ${props => props.theme.body};
+        position: absolute;
+        transform: scale(0.7);
+        left: 0;
+        transition: left 100ms ease-in-out;
+    }
+
+    &:checked:after {
+        left: 20px;
+    }
 `;
