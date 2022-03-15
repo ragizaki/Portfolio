@@ -19,7 +19,7 @@ export const NavContainer = styled(Container)`
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    padding: 0 70px;
+    padding: 0 0px;
 `;
 
 export const NavLogo = styled.a`

@@ -28,8 +28,3 @@ export const SongArtists = styled.h3`
     margin-top: 10px;
     opacity: 0.8;
 `;
-
-export const Caption = styled.p`
-    display: block;
-    font-size: 1.5rem;
-`;

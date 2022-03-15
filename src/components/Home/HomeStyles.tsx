@@ -1,12 +1,18 @@
 import styled from 'styled-components';
-import { Container } from '../../styles/globalStyles';
+import Theme from '../../styles/theme';
 
-export const HomeContainer = styled(Container)`
+export const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: start;
     padding-top: 1rem;
     height: calc(100vh - 80px);
+    padding-left: 50px;
+    padding-right: 50px;
+
+    @media screen and (max-width: 960px) {
+        padding: 10px;
+    }
 `;
 
 export const Heading = styled.h1`
@@ -17,6 +23,10 @@ export const Heading = styled.h1`
 
     @media screen and (max-width: 960px) {
         font-size: 3rem;
+    }
+    @media screen and (max-width: 480px) {
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
 `;
 
@@ -32,6 +42,15 @@ export const TagItem = styled.p`
     }
 `;
 
+export const Company = styled.a<{ theme: Theme }>`
+    text-decoration: none;
+    transition: all 100ms ease-in;
+    color: ${props => props.theme.text};
+    &:hover {
+        opacity: 0.7;
+    }
+`;
+
 export const Socials = styled.div`
-    margin-top: 20px;
+    display: flex;
 `;

@@ -1,5 +1,5 @@
 import { homeData } from '../../data';
-import { HomeContainer, Heading, TagItem, Socials } from './HomeStyles';
+import { HomeContainer, Heading, TagItem, Company, Socials } from './HomeStyles';
 import { Button } from '../../styles/globalStyles';
 import { Song } from '../../services/spotify';
 import RecentTrack from '../RecentTrack/RecentTrack';
@@ -15,7 +15,13 @@ const Home = ({ song }: HomeProps) => {
             <Heading>{heading}</Heading>
             <TagItem>
                 Hey there, welcome to my website! I'm a second year Computer Science student at UWaterloo. I'm
-                currently interning at <strong>{company}</strong> as a <strong>{position}</strong>.
+                currently interning at{' '}
+                <strong>
+                    <Company href={company.website} target='_blank'>
+                        {company.name}
+                    </Company>
+                </strong>{' '}
+                as a <strong>{position}</strong>.
             </TagItem>
             {song ? (
                 <>

@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 
-import GlobalStyles from './styles/globalStyles';
+import GlobalStyles, { Container } from './styles/globalStyles';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styles/theme';
 import { getToken, getMostRecentSong, Song } from './services/spotify';
@@ -32,7 +32,8 @@ const App = (): JSX.Element => {
         (async () => {
             try {
                 const token: string = await getToken();
-                const song: Song | null = await getMostRecentSong(token);
+                console.log(token);
+                const song: Song = await getMostRecentSong(token);
                 setSong(song);
             } catch (error) {
                 console.error(error);
@@ -47,13 +48,13 @@ const App = (): JSX.Element => {
     const toggleTheme = useCallback(() => setIsDark(prevTheme => !prevTheme), [setIsDark]);
 
     return (
-        <div>
+        <Container>
             <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
                 <GlobalStyles />
                 <Navbar toggleTheme={toggleTheme} isDark={isDark} />
                 <Home song={song} />
             </ThemeProvider>
-        </div>
+        </Container>
     );
 };
 

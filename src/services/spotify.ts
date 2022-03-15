@@ -1,12 +1,13 @@
 import { Buffer } from 'buffer';
-const clientId = 'b9f66cf24cbe4874908781e3287ee9ca';
-const clientSecret = '394e840a395a4ca28fbade405f0d626f';
+
+const clientId: string = process.env.REACT_APP_CLIENT_ID as string;
+const clientSecret: string = process.env.REACT_APP_CLIENT_SECRET as string;
 
 export const getToken = async (): Promise<string> => {
     const res = await fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
         headers: {
-            Authorization: 'Basic ' + Buffer.from(`${clientId}:${clientSecret}`).toString('base64'),
+            Authorization: 'Basic ' + btoa(clientId + ':' + clientSecret),
             'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: 'grant_type=client_credentials',
@@ -23,6 +24,7 @@ export const getMostRecentSong = async (token: string): Promise<Song> => {
             Authorization: `Bearer ${token}`,
         },
     });
+    console.log(res);
     const data = await res.json();
 
     // getting properties I want to export

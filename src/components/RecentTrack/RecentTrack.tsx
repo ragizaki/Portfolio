@@ -1,4 +1,4 @@
-import { TrackContainer, Image, SongInfo, SongArtists, SongTitle, Caption } from './RecentTrackStyles';
+import { TrackContainer, Image, SongInfo, SongArtists, SongTitle } from './RecentTrackStyles';
 import { Song } from '../../services/spotify';
 
 interface SongProps {
