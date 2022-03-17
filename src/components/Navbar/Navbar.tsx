@@ -25,32 +25,36 @@ interface Props {
 
 const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
     const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
-    const [changeNav, setChangeNav] = useState<boolean>(false);
+    const [changenav, setchangenav] = useState<boolean | undefined>(false);
     const theme = useContext(ThemeContext);
     let listener: any = null;
 
     useEffect(() => {
         listener = document.addEventListener('scroll', () => {
-            setChangeNav(window.scrollY < 100 ? false : true);
+            setchangenav(window.scrollY < 100 ? false : true);
         });
         return () => {
             document.removeEventListener('scroll', listener);
         };
-    }, [changeNav]);
+    }, [changenav]);
 
     const onBurgerClick = (): void => setIsBurgerOpen(prevOpen => !prevOpen);
 
     const scrollToTop = (): void => animateScroll.scrollToTop();
     return (
-        <Nav changeNav={changeNav}>
+        <Nav changenav={changenav ? true : undefined}>
             <IconContext.Provider value={{ color: theme.toggleBorder }}>
                 <NavContainer>
-                    <NavLogo changeNav={changeNav} onClick={scrollToTop}>
+                    <NavLogo changenav={changenav ? true : undefined} onClick={scrollToTop}>
                         ZM.
                     </NavLogo>
                     <NavItems>
                         {navData.map(item => (
-                            <NavItem to={item.id} smooth={true} key={item.key} changeNav={changeNav}>
+                            <NavItem
+                                to={item.id}
+                                smooth={true}
+                                key={item.key}
+                                changenav={changenav ? true : undefined}>
                                 {item.value}
                             </NavItem>
                         ))}
@@ -58,7 +62,12 @@ const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
                             Open Resume
                         </ResumeButton>
                     </NavItems>
-                    <ThemeToggle type='checkbox' onChange={toggleTheme} checked={isDark} changeNav={changeNav} />
+                    <ThemeToggle
+                        type='checkbox'
+                        onChange={toggleTheme}
+                        checked={isDark}
+                        changenav={changenav ? true : undefined}
+                    />
                     <BurgerMenu onClick={onBurgerClick}>{isBurgerOpen ? <FaTimes /> : <FaBars />}</BurgerMenu>
                 </NavContainer>
             </IconContext.Provider>
