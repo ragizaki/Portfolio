@@ -53,6 +53,7 @@ const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
                             <NavItem
                                 to={item.id}
                                 smooth={true}
+                                duration={1500}
                                 key={item.key}
                                 changenav={changenav ? true : undefined}>
                                 {item.value}
