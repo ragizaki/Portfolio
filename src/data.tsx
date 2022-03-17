@@ -33,6 +33,7 @@ export const homeData = {
 
 export const experienceData = [
     {
+        id: 0,
         company: {
             name: 'Quill Podcasting',
             website: 'https://www.quillpodcasting.com',
