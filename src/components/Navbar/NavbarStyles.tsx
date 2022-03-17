@@ -3,7 +3,7 @@ import { Container, Button } from '../../styles/globalStyles';
 import Theme from '../../styles/theme';
 import { Link } from 'react-scroll';
 
-export const Nav = styled.nav`
+export const Nav = styled.nav<{ changeNav: boolean; theme: Theme }>`
     height: 80px;
     display: flex;
     justify-content: center;
@@ -12,6 +12,7 @@ export const Nav = styled.nav`
     position: sticky;
     top: 0;
     z-index: 999;
+    background: ${props => (props.changeNav ? props.theme.text : '')};
 `;
 
 export const NavContainer = styled(Container)`
@@ -19,16 +20,16 @@ export const NavContainer = styled(Container)`
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    padding: 0 0px;
 `;
 
-export const NavLogo = styled.a`
+export const NavLogo = styled.a<{ changeNav: boolean; theme: Theme }>`
     justify-self: flex-start;
     text-decoration: none;
     cursor: pointer;
     font-size: 1.2rem;
     font-weight: bold;
     transition: 200ms all ease;
+    color: ${props => (props.changeNav ? props.theme.body : '')};
 
     &:hover {
         opacity: 0.7;
@@ -67,13 +68,14 @@ export const NavItems = styled.ul`
     } */
 `;
 
-export const NavItem = styled(Link)<{ to: string }>`
+export const NavItem = styled(Link)<{ to: string; changeNav: boolean; theme: Theme }>`
     text-transform: capitalize;
     margin-right: 30px;
     cursor: pointer;
     transition: all 200ms ease-in;
     font-size: 1.1rem;
     font-weight: 500;
+    color: ${props => (props.changeNav ? props.theme.body : '')};
 
     &:hover {
         opacity: 0.6;
@@ -85,20 +87,20 @@ export const ResumeButton = styled(Button)`
     font-size: 0.9rem;
 `;
 
-export const ThemeToggle = styled.input<{ theme: Theme }>`
+export const ThemeToggle = styled.input<{ theme: Theme; changeNav: boolean }>`
     appearance: none;
     -webkit-appearance: none;
     width: 40px;
     height: 20px;
     border-radius: 3em;
-    background: ${props => props.theme.text};
+    background: ${props => (props.changeNav ? props.theme.body : props.theme.text)};
     outline: 0;
     cursor: pointer;
     transition: background-color 200ms ease-in-out;
     position: relative;
 
     &:checked {
-        background: ${props => props.theme.text};
+        background: ${props => (props.changeNav ? props.theme.body : props.theme.text)};
     }
 
     &:after {
@@ -106,7 +108,7 @@ export const ThemeToggle = styled.input<{ theme: Theme }>`
         width: 20px;
         height: 20px;
         border-radius: 3em;
-        background: ${props => props.theme.body};
+        background: ${props => (props.changeNav ? props.theme.text : props.theme.body)};
         position: absolute;
         transform: scale(0.7);
         left: 0;
