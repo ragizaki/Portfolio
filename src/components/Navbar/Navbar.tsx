@@ -25,10 +25,10 @@ interface Props {
 
 const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
     const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
-    const [changenav, setchangenav] = useState<boolean | undefined>(false);
+    const [changenav, setchangenav] = useState<boolean>(false);
     const theme = useContext(ThemeContext);
-    let listener: any = null;
 
+    let listener: any = null;
     useEffect(() => {
         listener = document.addEventListener('scroll', () => {
             setchangenav(window.scrollY < 100 ? false : true);
@@ -42,10 +42,10 @@ const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
 
     const scrollToTop = (): void => animateScroll.scrollToTop();
     return (
-        <Nav changenav={changenav ? true : undefined}>
+        <Nav $changenav={changenav}>
             <IconContext.Provider value={{ color: theme.toggleBorder }}>
                 <NavContainer>
-                    <NavLogo changenav={changenav ? true : undefined} onClick={scrollToTop}>
+                    <NavLogo $changenav={changenav} onClick={scrollToTop}>
                         ZM.
                     </NavLogo>
                     <NavItems>
@@ -55,7 +55,7 @@ const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
                                 smooth={true}
                                 duration={1500}
                                 key={item.key}
-                                changenav={changenav ? true : undefined}>
+                                $changenav={changenav}>
                                 {item.value}
                             </NavItem>
                         ))}
@@ -63,12 +63,7 @@ const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
                             Open Resume
                         </ResumeButton>
                     </NavItems>
-                    <ThemeToggle
-                        type='checkbox'
-                        onChange={toggleTheme}
-                        checked={isDark}
-                        changenav={changenav ? true : undefined}
-                    />
+                    <ThemeToggle type='checkbox' onChange={toggleTheme} checked={isDark} $changenav={changenav} />
                     <BurgerMenu onClick={onBurgerClick}>{isBurgerOpen ? <FaTimes /> : <FaBars />}</BurgerMenu>
                 </NavContainer>
             </IconContext.Provider>
