@@ -31,7 +31,7 @@ const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
     let listener: any = null;
     useEffect(() => {
         listener = document.addEventListener('scroll', () => {
-            setchangenav(window.scrollY < 100 ? false : true);
+            setchangenav(window.scrollY < 50 ? false : true);
         });
         return () => {
             document.removeEventListener('scroll', listener);
@@ -53,7 +53,7 @@ const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
                             <NavItem
                                 to={item.id}
                                 smooth={true}
-                                duration={1500}
+                                duration={1000}
                                 key={item.key}
                                 $changenav={changenav}>
                                 {item.value}
