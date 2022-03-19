@@ -1,23 +1,36 @@
-import React from 'react';
 import { experienceData } from '../../data';
+import {
+    Heading,
+    CompanyImage,
+    ExperienceContainer,
+    Card,
+    ExperienceInfo,
+    Company,
+    Role,
+    Location,
+    Body,
+} from './ExperienceStyles';
 
-type Props = {};
-
-const Experience = (props: Props) => {
+const Experience = (): JSX.Element => {
     return (
-        <div>
+        <ExperienceContainer id='experience'>
+            <Heading>My Journey</Heading>
             {experienceData.map(role => (
-                <div>
-                    <img src={role.company.logo} />
-                    <p>{role.company.name}</p>
-                    <p>
-                        {role.position}, {role.tenure}
-                    </p>
-                    <p>{role.location}</p>
-                    {role.body}
-                </div>
+                <Card key={role.id}>
+                    <CompanyImage src={role.company.logo} />
+                    <ExperienceInfo>
+                        <Company>
+                            <a>{role.company.name}</a>
+                        </Company>
+                        <Role>
+                            {role.position}, <i>{role.tenure}</i>
+                        </Role>
+                        <Location>{role.location}</Location>
+                        <Body>{role.body}</Body>
+                    </ExperienceInfo>
+                </Card>
             ))}
-        </div>
+        </ExperienceContainer>
     );
 };
 
