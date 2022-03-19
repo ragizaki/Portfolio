@@ -39,8 +39,9 @@ export const ExperienceInfo = styled.div`
     }
 `;
 
-export const Company = styled.p<{ theme: Theme }>`
+export const Company = styled.a<{ theme: Theme }>`
     color: ${props => props.theme.primary};
+    text-decoration: none;
     font-size: 1.6rem;
     margin-bottom: 1rem;
     cursor: pointer;
@@ -52,7 +53,7 @@ export const Company = styled.p<{ theme: Theme }>`
 
 export const Role = styled.p`
     font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    margin: 0.6rem 0;
 `;
 
 export const Location = styled.p`

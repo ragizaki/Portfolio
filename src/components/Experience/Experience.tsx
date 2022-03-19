@@ -19,8 +19,8 @@ const Experience = (): JSX.Element => {
                 <Card key={role.id}>
                     <CompanyImage src={role.company.logo} />
                     <ExperienceInfo>
-                        <Company>
-                            <a>{role.company.name}</a>
+                        <Company href={role.company.website} target='_blank'>
+                            {role.company.name}
                         </Company>
                         <Role>
                             {role.position}, <i>{role.tenure}</i>
