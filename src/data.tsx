@@ -1,11 +1,13 @@
-import { NavLink, LandData } from './util/interfaces';
-import { FaGit, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
-export const navData: NavLink[] = [
-    { id: 'experience', value: 'Experience', key: 0 },
-    { id: 'about', value: 'About', key: 1 },
-    { id: 'projects', value: 'Projects', key: 2 },
-];
+export const navData = {
+    navLogo: 'ZM.',
+    navItems: [
+        { id: 'experience', value: 'Experience', key: 0 },
+        { id: 'about', value: 'About', key: 1 },
+        { id: 'projects', value: 'Projects', key: 2 },
+    ],
+};
 
 export const homeData = {
     heading: 'Zaki Machfj',
@@ -37,7 +39,7 @@ export const experienceData = [
         company: {
             name: 'Dejero Labs',
             website: 'https://www.dejero.com/',
-            logo: 'https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/v1430774933/zozcnfnfademsaywt3nu.png',
+            logo: 'https://pbs.twimg.com/profile_images/1082337275386740736/0kS2y2Oq_400x400.jpg',
         },
         position: 'Software Developer',
         tenure: 'Incoming May 2',
