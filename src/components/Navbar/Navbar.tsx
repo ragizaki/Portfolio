@@ -41,15 +41,16 @@ const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
     const onBurgerClick = (): void => setIsBurgerOpen(prevOpen => !prevOpen);
 
     const scrollToTop = (): void => animateScroll.scrollToTop();
+
     return (
         <Nav $changenav={changenav}>
             <IconContext.Provider value={{ color: theme.toggleBorder }}>
                 <NavContainer>
                     <NavLogo $changenav={changenav} onClick={scrollToTop}>
-                        ZM.
+                        {navData.navLogo}
                     </NavLogo>
                     <NavItems>
-                        {navData.map(item => (
+                        {navData.navItems.map(item => (
                             <NavItem
                                 to={item.id}
                                 smooth={true}
