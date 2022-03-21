@@ -16,11 +16,6 @@ export const homeData = {
         name: 'Dejero Labs',
         website: 'https://www.dejero.com',
     },
-    tags: [
-        { value: 'Developer', id: 0 },
-        { value: 'Student', id: 1 },
-        { value: 'Learner', id: 2 },
-    ],
     socials: [
         { id: 0, platform: 'Github', icon: <FaGithub />, href: 'https://github.com/ragizaki', secondary: true },
         {
@@ -44,7 +39,7 @@ export const experienceData = [
         position: 'Software Developer',
         tenure: 'Incoming May 2',
         location: 'Waterloo, ON',
-        tools: ['Alpine.js', 'Tailwindcss', 'PostgreSQL', 'Ruby on Rails', 'AWS EC2'],
+        tools: [],
         body: <p>I'm super excited to join Dejero's Web Applications team this summer!</p>,
     },
     {
@@ -78,7 +73,7 @@ export const experienceData = [
         position: 'Frontend Developer',
         tenure: 'Sept. 2019 - May 2020',
         location: 'Mississauga, ON',
-        tools: ['Alpine.js', 'Tailwindcss', 'PostgreSQL', 'Ruby on Rails', 'AWS EC2'],
+        tools: ['React', 'Redux', 'TypeScript', 'MaterialUI'],
         body: (
             <p>
                 One of my first experiences as a developer was when I volunteered as a frontend developer for
