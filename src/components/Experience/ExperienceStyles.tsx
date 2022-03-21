@@ -13,7 +13,7 @@ export const Card = styled.div<{ theme: Theme }>`
         background: red;
     }
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
         flex-direction: column;
     }
 `;
@@ -26,17 +26,21 @@ export const Heading = styled.h2`
 
 export const CompanyImage = styled.img`
     object-fit: cover;
-    width: 150px;
-    height: 150px;
+    width: 8rem;
+    height: 8rem;
     border-radius: 50%;
     border: 3px solid ${props => props.theme.text};
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `;
 
 export const ExperienceInfo = styled.div`
-    padding: 0 50px;
+    padding: 0 2rem;
 
-    @media screen and (max-width: 480px) {
-        padding: 10px;
+    @media screen and (max-width: 768px) {
+        padding: 0px;
     }
 `;
 
@@ -53,15 +57,23 @@ export const Company = styled.a<{ theme: Theme }>`
 `;
 
 export const Role = styled.p`
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 0.6rem 0;
 `;
 
 export const Location = styled.p`
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.8rem;
     font-weight: 700;
 `;
 
-export const Body = styled.p`
-    line-height: 1.5rem;
+export const Body = styled.div`
+    line-height: 1.8rem;
+    font-size: 1rem;
+
+    @media screen and (max-width: 768px) {
+    }
+`;
+
+export const Tools = styled.p`
+    margin-bottom: 1rem;
 `;

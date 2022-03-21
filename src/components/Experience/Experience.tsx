@@ -9,6 +9,7 @@ import {
     Role,
     Location,
     Body,
+    Tools,
 } from './ExperienceStyles';
 
 const Experience = (): JSX.Element => {
@@ -26,6 +27,12 @@ const Experience = (): JSX.Element => {
                             {role.position}, <i>{role.tenure}</i>
                         </Role>
                         <Location>{role.location}</Location>
+                        {role.tools.length ? (
+                            <Tools>
+                                Tools: <i>{role.tools.join(', ')}</i>
+                            </Tools>
+                        ) : null}
+
                         <Body>{role.body}</Body>
                     </ExperienceInfo>
                 </Card>
