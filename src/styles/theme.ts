@@ -16,7 +16,7 @@ const genericThemes = {
 export const lightTheme: Theme = {
     body: '#FFF',
     text: '#363537',
-    toggleBorder: '#FFF',
+    toggleBorder: '#363537',
     background: '#363537',
     ...genericThemes,
 };
