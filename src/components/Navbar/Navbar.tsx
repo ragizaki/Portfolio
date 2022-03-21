@@ -1,15 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import { animateScroll } from 'react-scroll';
-import {
-    Nav,
-    NavContainer,
-    NavLogo,
-    NavItems,
-    NavItem,
-    BurgerMenu,
-    ResumeButton,
-    ThemeToggle,
-} from './NavbarStyles';
+import { Nav, NavContainer, NavLogo, NavLink, NavMenu, MenuIcon, ResumeButton, ThemeToggle } from './NavbarStyles';
+
 import { navData } from '../../data';
 import Resume from '../../assets/Resume.pdf';
 
@@ -24,48 +16,35 @@ interface Props {
 }
 
 const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
-    const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
-    const [changenav, setchangenav] = useState<boolean>(false);
+    const [menuOpen, setmenuOpen] = useState<boolean>(false);
     const theme = useContext(ThemeContext);
 
-    let listener: any = null;
-    useEffect(() => {
-        listener = document.addEventListener('scroll', () => {
-            setchangenav(window.scrollY < 50 ? false : true);
-        });
-        return () => {
-            document.removeEventListener('scroll', listener);
-        };
-    }, [changenav]);
+    const handleMenuClick = (): void => setmenuOpen(prevOpen => !prevOpen);
 
-    const onBurgerClick = (): void => setIsBurgerOpen(prevOpen => !prevOpen);
+    const closeMenu = (): void => setmenuOpen(false);
 
-    const scrollToTop = (): void => animateScroll.scrollToTop();
+    const handleLogoClick = (): void => {
+        animateScroll.scrollToTop();
+        closeMenu();
+    };
 
     return (
-        <Nav $changenav={changenav}>
-            <IconContext.Provider value={{ color: theme.toggleBorder }}>
+        <Nav>
+            <IconContext.Provider value={{ color: theme.text }}>
                 <NavContainer>
-                    <NavLogo $changenav={changenav} onClick={scrollToTop}>
-                        {navData.navLogo}
-                    </NavLogo>
-                    <NavItems>
+                    <NavLogo onClick={handleLogoClick}>{navData.navLogo}</NavLogo>
+                    <NavMenu menuOpen={menuOpen} onClick={handleMenuClick}>
                         {navData.navItems.map(item => (
-                            <NavItem
-                                to={item.id}
-                                smooth={true}
-                                duration={1000}
-                                key={item.key}
-                                $changenav={changenav}>
+                            <NavLink to={item.id} smooth={true} duration={1000} key={item.key} onClick={closeMenu}>
                                 {item.value}
-                            </NavItem>
+                            </NavLink>
                         ))}
                         <ResumeButton secondary={false} href={Resume} target='_blank' rel='noreffer'>
                             Open Resume
                         </ResumeButton>
-                    </NavItems>
-                    <ThemeToggle type='checkbox' onChange={toggleTheme} checked={isDark} $changenav={changenav} />
-                    <BurgerMenu onClick={onBurgerClick}>{isBurgerOpen ? <FaTimes /> : <FaBars />}</BurgerMenu>
+                    </NavMenu>
+                    <ThemeToggle type='checkbox' onChange={toggleTheme} checked={isDark} />
+                    <MenuIcon onClick={handleMenuClick}>{menuOpen ? <FaTimes /> : <FaBars />}</MenuIcon>
                 </NavContainer>
             </IconContext.Provider>
         </Nav>

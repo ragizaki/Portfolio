@@ -3,7 +3,7 @@ import { Container, Button } from '../../styles/globalStyles';
 import Theme from '../../styles/theme';
 import { Link } from 'react-scroll';
 
-export const Nav = styled.nav<{ $changenav: boolean | undefined; theme: Theme }>`
+export const Nav = styled.nav<{ theme: Theme }>`
     height: 80px;
     display: flex;
     justify-content: center;
@@ -12,7 +12,7 @@ export const Nav = styled.nav<{ $changenav: boolean | undefined; theme: Theme }>
     position: sticky;
     top: 0;
     z-index: 999;
-    background: ${props => (props.$changenav ? props.theme.text : '')};
+    background: ${props => props.theme.body};
 `;
 
 export const NavContainer = styled(Container)`
@@ -22,14 +22,13 @@ export const NavContainer = styled(Container)`
     height: 80px;
 `;
 
-export const NavLogo = styled.a<{ $changenav: boolean | undefined; theme: Theme }>`
+export const NavLogo = styled.a<{ theme: Theme }>`
     justify-self: flex-start;
     text-decoration: none;
     cursor: pointer;
     font-size: 1.2rem;
     font-weight: bold;
     transition: 200ms all ease;
-    color: ${props => (props.$changenav ? props.theme.body : '')};
 
     &:hover {
         opacity: 0.7;
@@ -37,7 +36,7 @@ export const NavLogo = styled.a<{ $changenav: boolean | undefined; theme: Theme 
     }
 `;
 
-export const BurgerMenu = styled.div`
+export const MenuIcon = styled.div`
     display: none;
 
     @media screen and (max-width: 960px) {
@@ -46,40 +45,46 @@ export const BurgerMenu = styled.div`
         top: 0;
         right: 0;
         transform: translate(-100%, 60%);
-        font-size: 1.7rem;
+        font-size: 1.8rem;
         cursor: pointer;
     }
 `;
 
-export const NavItems = styled.ul`
+export const NavMenu = styled.ul<{ menuOpen: boolean }>`
+    display: flex;
+    align-items: center;
     list-style: none;
     text-align: center;
 
-    /* @media screen and (max-width: 960px) {
-        display: flex;
+    @media screen and (max-width: 960px) {
         flex-direction: column;
         width: 100%;
-        height: 90vh;
+        height: 50vh;
         position: absolute;
         top: 80px;
+        left: ${props => (props.menuOpen ? 0 : '-100%')};
         opacity: 1;
-        transition: all 0.5s ease-in;
-        background: #101522;
-    } */
+        transition: all 500ms ease;
+        background: ${props => props.theme.body};
+    }
 `;
 
-export const NavItem = styled(Link)<{ to: string; $changenav: boolean | undefined; theme: Theme }>`
+export const NavLink = styled(Link)<{ to: string; theme: Theme }>`
     text-transform: capitalize;
     margin-right: 30px;
     cursor: pointer;
     transition: all 200ms ease-in;
     font-size: 1.1rem;
     font-weight: 500;
-    color: ${props => (props.$changenav ? props.theme.body : '')};
 
     &:hover {
         opacity: 0.6;
         transform: translateY(-10%);
+    }
+
+    @media screen and (max-width: 960px) {
+        width: 100%;
+        margin-bottom: 0.8rem;
     }
 `;
 
@@ -87,20 +92,20 @@ export const ResumeButton = styled(Button)`
     font-size: 0.9rem;
 `;
 
-export const ThemeToggle = styled.input<{ theme: Theme; $changenav: boolean | undefined }>`
+export const ThemeToggle = styled.input<{ theme: Theme }>`
     appearance: none;
     -webkit-appearance: none;
     width: 40px;
     height: 20px;
     border-radius: 3em;
-    background: ${props => (props.$changenav ? props.theme.body : props.theme.text)};
+    background: ${props => props.theme.text};
     outline: 0;
     cursor: pointer;
     transition: background-color 200ms ease-in-out;
     position: relative;
 
     &:checked {
-        background: ${props => (props.$changenav ? props.theme.body : props.theme.text)};
+        background: ${props => props.theme.text};
     }
 
     &:after {
@@ -108,7 +113,7 @@ export const ThemeToggle = styled.input<{ theme: Theme; $changenav: boolean | un
         width: 20px;
         height: 20px;
         border-radius: 3em;
-        background: ${props => (props.$changenav ? props.theme.text : props.theme.body)};
+        background: ${props => props.theme.body};
         position: absolute;
         transform: scale(0.7);
         left: 0;
@@ -117,5 +122,9 @@ export const ThemeToggle = styled.input<{ theme: Theme; $changenav: boolean | un
 
     &:checked:after {
         left: 20px;
+    }
+
+    @media screen and (max-width: 960px) {
+        right: 5rem;
     }
 `;
