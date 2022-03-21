@@ -7,17 +7,16 @@ export const HomeContainer = styled.div`
     justify-content: start;
     padding-top: 1rem;
     height: calc(100vh - 80px);
-    padding-left: 50px;
-    padding-right: 50px;
 
     @media screen and (max-width: 960px) {
-        padding: 10px;
+        padding: 0px;
     }
 `;
 
 export const Heading = styled.h1`
     font-size: 4rem;
     font-weight: bold;
+    margin-top: 1.5rem;
     margin-bottom: 2.5rem;
     letter-spacing: 1px;
 
@@ -37,7 +36,6 @@ export const TagItem = styled.p`
     line-height: 2.3rem;
 
     @media screen and (max-width: 960px) {
-        padding: 0 20px;
         line-height: 40px;
     }
 `;
@@ -53,4 +51,5 @@ export const Company = styled.a<{ theme: Theme }>`
 
 export const Socials = styled.div`
     display: flex;
+    margin-top: 5px;
 `;

@@ -1,14 +1,8 @@
 import { homeData } from '../../data';
 import { HomeContainer, Heading, TagItem, Company, Socials } from './HomeStyles';
 import { Button } from '../../styles/globalStyles';
-import { Song } from '../../services/spotify';
-import RecentTrack from '../RecentTrack/RecentTrack';
 
-interface HomeProps {
-    song: Song | null;
-}
-
-const Home = ({ song }: HomeProps) => {
+const Home = (): JSX.Element => {
     const { heading, socials, position, company } = homeData;
     return (
         <HomeContainer>
@@ -23,12 +17,13 @@ const Home = ({ song }: HomeProps) => {
                 </strong>{' '}
                 as a <strong>{position}</strong>.
             </TagItem>
-            {song ? (
-                <>
-                    <TagItem>My most listened to song at the moment is:</TagItem>
-                    <RecentTrack song={song} />
-                </>
-            ) : null}
+            <div>
+                <TagItem>
+                    I love building high-quality tools that are user-friendly and simple. <br /> I'm currently
+                    learning <strong>Next.js</strong>, <strong>TypeScript </strong>and <strong>Firebase</strong> to
+                    create full-stack apps.
+                </TagItem>
+            </div>
 
             <TagItem>Feel free to reach out or check my work at the socials below!</TagItem>
             <Socials>
