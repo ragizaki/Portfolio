@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { animateScroll } from 'react-scroll';
 import { Nav, NavContainer, NavLogo, NavLink, NavMenu, MenuIcon, ResumeButton, ThemeToggle } from './NavbarStyles';
 
