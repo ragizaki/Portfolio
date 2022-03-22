@@ -29,7 +29,7 @@ const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
     };
 
     return (
-        <Nav>
+        <Nav isDark={isDark}>
             <IconContext.Provider value={{ color: theme.text }}>
                 <NavContainer>
                     <NavLogo onClick={handleLogoClick}>{navData.navLogo}</NavLogo>

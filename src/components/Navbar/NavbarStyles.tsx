@@ -3,7 +3,7 @@ import { Container, Button } from '../../styles/globalStyles';
 import Theme from '../../styles/theme';
 import { Link } from 'react-scroll';
 
-export const Nav = styled.nav<{ theme: Theme }>`
+export const Nav = styled.nav<{ theme: Theme; isDark: boolean }>`
     height: 80px;
     display: flex;
     justify-content: center;
@@ -13,6 +13,7 @@ export const Nav = styled.nav<{ theme: Theme }>`
     top: 0;
     z-index: 999;
     background: ${props => props.theme.body};
+    border-bottom: 0.1px solid ${props => (props.isDark ? 'gray' : 'lightgray')};
 `;
 
 export const NavContainer = styled(Container)`
