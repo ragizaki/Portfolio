@@ -61,6 +61,7 @@ export const NavMenu = styled.ul<{ menuOpen: boolean }>`
         flex-direction: column;
         width: 100%;
         height: 50vh;
+        padding-top: 2rem;
         position: absolute;
         top: 80px;
         left: ${props => (props.menuOpen ? 0 : '-100%')};
@@ -85,7 +86,7 @@ export const NavLink = styled(Link)<{ to: string; theme: Theme }>`
 
     @media screen and (max-width: 960px) {
         width: 100%;
-        margin-bottom: 0.8rem;
+        margin-bottom: 1rem;
     }
 `;
 
