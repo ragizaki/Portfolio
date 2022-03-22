@@ -35,7 +35,13 @@ const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
                     <NavLogo onClick={handleLogoClick}>{navData.navLogo}</NavLogo>
                     <NavMenu menuOpen={menuOpen} onClick={handleMenuClick}>
                         {navData.navItems.map(item => (
-                            <NavLink to={item.id} smooth={true} duration={1000} key={item.key} onClick={closeMenu}>
+                            <NavLink
+                                to={item.id}
+                                smooth={true}
+                                duration={1000}
+                                offset={-100}
+                                key={item.key}
+                                onClick={closeMenu}>
                                 {item.value}
                             </NavLink>
                         ))}
