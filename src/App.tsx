@@ -1,5 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 
+// comment
+
 import GlobalStyles, { Container } from './styles/globalStyles';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styles/theme';
