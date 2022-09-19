@@ -3,24 +3,27 @@ import { HomeContainer, Heading, TagItem, Company, Socials } from './HomeStyles'
 import { Button } from '../../styles/globalStyles';
 
 const Home = (): JSX.Element => {
-    const { heading, socials, position, company } = homeData;
+    const { heading, socials, position, company, isLooking, term } = homeData;
     return (
         <HomeContainer>
             <Heading>{heading}</Heading>
             <TagItem>
-                Hey there, welcome to my website! I'm a second year Computer Science student at UWaterloo. I'm
-                currently interning at{' '}
-                <strong>
-                    <Company href={company.website} target='_blank'>
-                        {company.name}
-                    </Company>
-                </strong>{' '}
-                as a <strong>{position}</strong>.
+                Hey there, welcome to my website! I'm a third year Computer Science student at UWaterloo.{' '}
+                {isLooking 
+                    ? <span>I'm currently seeking SWE internships for <strong>{term}</strong>.</span> 
+                    : <span>I'm currently interning at{' '}
+                        <strong>
+                            <Company href={company.website} target='_blank'>
+                                {company.name}
+                            </Company>
+                        </strong>{' '}
+                        as a <strong>{position}</strong>.</span>
+                }
             </TagItem>
             <div>
                 <TagItem>
-                    I love building high-quality tools that are user-friendly and simple. <br /> I'm currently
-                    learning <strong>Next.js</strong>, <strong>TypeScript </strong>and <strong>Firebase</strong> to
+                    I love building high-quality tools that are user-friendly and meaningful. <br /> I'm currently
+                    learning <strong>Next.js</strong>, <strong>TypeScript</strong>, <strong>Golang</strong> and <strong>AWS</strong> to
                     create full-stack apps.
                 </TagItem>
             </div>

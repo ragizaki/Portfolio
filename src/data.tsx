@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Link } from './styles/globalStyles';
 
 export const navData = {
     navLogo: 'ZM.',
@@ -11,6 +12,8 @@ export const navData = {
 
 export const homeData = {
     heading: 'Zaki Machfj',
+    isLooking: true,
+    term: 'Winter 2023',
     position: 'Software Developer',
     company: {
         name: 'Dejero Labs',
@@ -37,10 +40,31 @@ export const experienceData = [
             logo: 'https://pbs.twimg.com/profile_images/1082337275386740736/0kS2y2Oq_400x400.jpg',
         },
         position: 'Software Developer',
-        tenure: 'Incoming May 2',
-        location: 'Waterloo, ON',
-        tools: [],
-        body: <p>I'm super excited to join Dejero's Web Applications team this summer!</p>,
+        tenure: 'May - Aug. 2022',
+        location: '410 Albert Street - Waterloo, ON',
+        tools: ['Ruby on Rails', 'Angular', 'MySQL', 'Golang'],
+        body: 
+        <div>
+            <p>
+                What a great co-op experience this was. I had the pleasure to work in an amazing team culture and meet
+                some amazing people along the way. I wanted to thank Jeremy and Amanda for their mentorship and for giving
+                me many opportunities to create meaningful work and learn new things.
+            </p>
+            <br />
+            <p>
+                During this internship, I got the chance to work closely with Rails and Angular to create fullstack features
+                for the company's online product <Link href='https://www.dejero.com/services/control'>Control.</Link> In particular,
+                one of my biggest tickets was redesigning and implementing the app's 2FA system to meet the DSLA certifications
+                before the end of the quarter. Most of the work was done in Rails and Golang, setting up new routes and endpoints
+                for different cases, as well as adding UI features with Angular. I worked closely with Jeremy, the Senior Web Developer,
+                and presented the finished product at the monthly stakeholders meeting.
+            </p>
+            <br />
+            <p>
+                It was one of the largest projects I've been involved with to date, and I learned invaluable lessons about design,
+                testing, and implementing a new feature in a large codebase.
+            </p>
+        </div>,
     },
     {
         id: 1,

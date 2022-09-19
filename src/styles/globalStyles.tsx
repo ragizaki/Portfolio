@@ -47,6 +47,16 @@ const buttonStyles = css`
     }
 `;
 
+export const Link = styled.a<{ theme: Theme }>`
+    color: ${props => props.theme.primary};
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 200ms ease;
+    &:hover {
+        opacity: 0.7;
+    }
+`
+
 export const Button = styled.a<{ theme: Theme; secondary: boolean }>`
     ${buttonStyles}
 
