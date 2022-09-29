@@ -36,10 +36,15 @@ const App = (): JSX.Element => {
     const toggleTheme = useCallback(() => {
         setIsDark(prevTheme => !prevTheme);
     }, [setIsDark]);
-
+    
     return (
+        // @ts-ignore
         <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-            <GlobalStyles />
+            {
+                // @ts-ignore
+                <GlobalStyles />
+            }
+            
             <Navbar toggleTheme={toggleTheme} isDark={isDark} />
             <Container>
                 <Home />
