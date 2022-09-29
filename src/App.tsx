@@ -44,7 +44,6 @@ const App = (): JSX.Element => {
                 // @ts-ignore
                 <GlobalStyles />
             }
-            
             <Navbar toggleTheme={toggleTheme} isDark={isDark} />
             <Container>
                 <Home />
