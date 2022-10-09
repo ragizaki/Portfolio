@@ -7,9 +7,12 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './styles/theme';
 
 // Components
-import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home/Home';
-import Experience from './components/Experience/Experience';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Experience from './components/Experience';
+
+// Spotify API
+import { getTopTracks } from './lib/spotify';
 
 const THEME: { key: string; light: string; dark: string } = {
     key: 'theme',
@@ -19,6 +22,7 @@ const THEME: { key: string; light: string; dark: string } = {
 
 const App = (): JSX.Element => {
     const [isDark, setIsDark] = useState<boolean>(false);
+    const [topSongs, setTopSongs] = useState([]);
 
     useEffect(() => {
         if (localStorage) {
@@ -28,6 +32,14 @@ const App = (): JSX.Element => {
             }
         }
     }, []);
+
+    useEffect(() => {
+        (async () => {
+            const res = await getTopTracks();
+            const { items } = await res.json();
+            setTopSongs(items);
+        })()
+    }, [])
 
     window.addEventListener('beforeunload', () => {
         localStorage.setItem(THEME.key, isDark ? THEME.dark : THEME.light);
@@ -46,7 +58,7 @@ const App = (): JSX.Element => {
             }
             <Navbar toggleTheme={toggleTheme} isDark={isDark} />
             <Container>
-                <Home />
+                <Home song={topSongs[0]} />
                 <Experience />
             </Container>
         </ThemeProvider>

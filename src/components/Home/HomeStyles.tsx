@@ -17,7 +17,7 @@ export const Heading = styled.h1`
     font-size: 4rem;
     font-weight: bold;
     margin-top: 1.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     letter-spacing: 1px;
 
     @media screen and (max-width: 960px) {
@@ -30,10 +30,10 @@ export const Heading = styled.h1`
 `;
 
 export const TagItem = styled.p`
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     text-decoration: capitalize;
     margin-bottom: 20px;
-    line-height: 2.3rem;
+    line-height: 2.6rem;
 
     @media screen and (max-width: 960px) {
         line-height: 40px;
@@ -51,5 +51,4 @@ export const Company = styled.a<{ theme: Theme }>`
 
 export const Socials = styled.div`
     display: flex;
-    margin-top: 5px;
 `;
