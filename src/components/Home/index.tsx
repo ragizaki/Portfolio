@@ -8,7 +8,7 @@ const Home = ({ song}: any): JSX.Element => {
     return (
         <HomeContainer>
             <Heading>{heading}</Heading>
-            <TagItem style={{fontSize: '2rem', opacity: 0.8, marginBottom: '3rem'}}>Software Developer | CS @ UWaterloo</TagItem>
+            <TagItem style={{fontSize: '2rem', opacity: 0.8, marginBottom: '2rem'}}>Software Developer | CS @ UWaterloo</TagItem>
             <TagItem>
                 Hey there 👋 I'm a 3rd year CS student at UWaterloo. I love playing ⚽ and listening to 🎵 in my free time! {' '}  
                 {isLooking 
@@ -26,7 +26,7 @@ const Home = ({ song}: any): JSX.Element => {
                 <TagItem>
                     {/* I love building high-quality tools that are user-friendly and meaningful. <br /> */}
                     Currently learning <strong>Next.js</strong>, <strong>C++</strong>, <strong>Golang</strong> and <strong>AWS</strong> to
-                    create cool projects in my free time. Feel free to reach out or check my work at the socials below!
+                    create cool projects in my free time.
                 </TagItem>
             </div>
 

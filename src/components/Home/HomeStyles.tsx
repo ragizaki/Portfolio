@@ -17,7 +17,7 @@ export const Heading = styled.h1`
     font-size: 4rem;
     font-weight: bold;
     margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.8rem;
     letter-spacing: 1px;
 
     @media screen and (max-width: 960px) {
