@@ -3,7 +3,7 @@ import Theme from '../../styles/theme';
 
 export const ExperienceContainer = styled.div`
     width: 100%;
-    margin-bottom: 4rem;
+    margin: 3rem 0 4rem 0;
 `;
 
 export const Card = styled.div<{ theme: Theme }>`
