@@ -30,10 +30,10 @@ export const Heading = styled.h1`
 `;
 
 export const TagItem = styled.p`
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     text-decoration: capitalize;
     margin-bottom: 20px;
-    line-height: 2.6rem;
+    line-height: 2.3rem;
 
     @media screen and (max-width: 960px) {
         line-height: 40px;
