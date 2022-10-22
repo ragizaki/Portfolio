@@ -5,7 +5,7 @@ export const Card = styled.a<{ theme: Theme }>`
   display: flex;
   width: 90%;
   margin: auto;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 10px;
   margin-bottom: 2rem;
   text-decoration: none;
