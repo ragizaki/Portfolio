@@ -63,12 +63,12 @@ const Home = ({ track }: Props): JSX.Element => {
         ))}
       </Socials>
 
-      <TagItem style={{ marginTop: "2rem", marginBottom: "0.5rem" }}>
-        Here's the last song I listened to on <strong>Spotify</strong>{" "}
-        (hopefully it's not too embarassing)
-      </TagItem>
-
-      {track && <RecentTrack track={track} />}
+      {track && (
+        <TagItem style={{ marginTop: "2rem", marginBottom: "0.5rem" }}>
+          Here's the last song I listened to on <strong>Spotify</strong>{" "}
+          (hopefully it's not too embarassing)
+        </TagItem>
+      )}
     </HomeContainer>
   );
 };
