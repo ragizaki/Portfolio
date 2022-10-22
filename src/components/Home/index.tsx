@@ -64,10 +64,13 @@ const Home = ({ track }: Props): JSX.Element => {
       </Socials>
 
       {track && (
-        <TagItem style={{ marginTop: "2rem", marginBottom: "0.5rem" }}>
-          Here's the last song I listened to on <strong>Spotify</strong>{" "}
-          (hopefully it's not too embarassing)
-        </TagItem>
+        <>
+          <TagItem style={{ marginTop: "2rem", marginBottom: "0.5rem" }}>
+            Here's the last song I listened to on <strong>Spotify</strong>{" "}
+            (hopefully it's not too embarassing)
+          </TagItem>
+          <RecentTrack track={track} />
+        </>
       )}
     </HomeContainer>
   );
