@@ -54,8 +54,8 @@ export const experienceData = [
     body: (
       <div>
         <p>
-          What a great co-op experience this was. I had the pleasure to work in
-          an amazing team culture and meet some amazing people along the way. I
+          I had an amazing time at Dejero. I had the pleasure to work in an
+          amazing team culture and meet some amazing people along the way. I
           wanted to thank Jeremy and Amanda for their mentorship and for giving
           me many opportunities to create meaningful work and learn new things.
         </p>
