@@ -3,7 +3,7 @@ import Theme from "../../../styles/theme";
 
 export const Card = styled.a<{ theme: Theme }>`
   display: flex;
-  width: 90%;
+  width: 80%;
   margin: auto;
   border: 1px solid black;
   border-radius: 10px;
