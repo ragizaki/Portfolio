@@ -1,6 +1,7 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "./styles/globalStyles";
 import { Project } from "./lib/types";
+import PersonalWebsiteImage from "./assets/personal-website.png";
 
 export const navData = {
   navLogo: "ZM.",
@@ -152,9 +153,9 @@ export const projectData: Project[] = [
     id: 2,
     name: "Personal Website",
     technologies: ["React", "TypeScript"],
-    description: "My website, built with React and TypeScript",
-    image:
-      "https://th.bing.com/th/id/R.66ee2f04c1dc70ba8cb5ec9f780990d1?rik=jZThfaUvlkGfhQ&pid=ImgRaw&r=0",
+    description:
+      "My website, built with React and TypeScript. Check in regularly for updates as I grow as a developer!",
+    image: PersonalWebsiteImage,
     href: "https://github.com/ragizaki/zaki",
   },
   {
@@ -164,7 +165,7 @@ export const projectData: Project[] = [
     description:
       "Web app for posting and rating popular campsites in Canada. Supports authentication and full CRUD functionality",
     image:
-      "https://th.bing.com/th/id/R.66ee2f04c1dc70ba8cb5ec9f780990d1?rik=jZThfaUvlkGfhQ&pid=ImgRaw&r=0",
+      "https://res.cloudinary.com/dmkc6lxx2/image/upload/v1588568342/Personal%20Blog/YelpCamp/2020-05-04_5_u8xwhq.png",
     href: "https://github.com/ragizaki/yelp-camp-nextjs-prisma",
   },
 ];
