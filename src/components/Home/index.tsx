@@ -1,11 +1,5 @@
 import { homeData } from "../../data";
-import {
-  HomeContainer,
-  Heading,
-  TagItem,
-  Company,
-  Socials,
-} from "./HomeStyles";
+import { HomeContainer, Heading, TagItem, Company, Socials } from "./styles";
 import { Button } from "../../styles/globalStyles";
 import RecentTrack from "../RecentTrack";
 import { Track } from "../../lib/types";
@@ -17,7 +11,7 @@ interface Props {
 const Home = ({ track }: Props): JSX.Element => {
   const { heading, socials, position, company, isLooking, term } = homeData;
   return (
-    <HomeContainer>
+    <HomeContainer id="about">
       <Heading>{heading}</Heading>
       <TagItem style={{ fontSize: "2rem", opacity: 0.8, marginBottom: "2rem" }}>
         Software Developer | CS @ UWaterloo

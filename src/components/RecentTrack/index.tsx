@@ -1,10 +1,5 @@
 import { Track } from "../../lib/types";
-import {
-  TrackContainer,
-  TrackArtist,
-  TrackImage,
-  TrackTitle,
-} from "./RecentTrackStyles";
+import { TrackContainer, TrackArtist, TrackImage, TrackTitle } from "./styles";
 
 interface Props {
   track: Track;
