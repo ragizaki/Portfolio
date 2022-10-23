@@ -100,15 +100,31 @@ export const experienceData = [
       "AWS EC2",
     ],
     body: (
-      <p>
-        This was my first internship, and it was one of the most fun and
-        valuable experiences I've had. The path to this role was not easy; I
-        applied to around 300 jobs on WaterlooWorks and got around 3 interviews,
-        and this was my only offer. It was my first job search and I was
-        extremely nervous, but I learned a lot, especially about the importance
-        of treating an interview like a conversation rather than, well, an
-        interview.
-      </p>
+      <div>
+        <p>
+          My first internship at Waterloo as a university student, my experience
+          at Quill taught me a lot about working in a dynamic, fast-paced
+          startup environment. I learned to be self-reliant, quick on my feet,
+          and to pick up new technologies quickly.
+        </p>
+        <br />
+        <p>
+          Most of my work was done on the frontend. In particular, I built UI
+          components from desinger mockups in Figma, for the company's online
+          podcasting tool. This work included building a signup page for new
+          users, a podcast player, as well as charts with chart.js to visualize
+          key podcast retention metrics. It was my first time using TailwindCSS
+          and Alpine.js, but I ended up throughly enjoying them, and I use
+          Tailwind heavily for styling to this day.
+        </p>
+        <br />
+        <p>
+          I also got some opportunities to work with the backend. I worked
+          closely with the CTO to learn Rails, as well as setting up a backend
+          to handle user registrations. I also had a chance to work with AWS EC2
+          to be familiar with the product's deployment process.
+        </p>
+      </div>
     ),
   },
   {
