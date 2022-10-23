@@ -15,6 +15,11 @@ export const Card = styled.a<{ theme: Theme }>`
   &:hover {
     transform: translateY(-5px);
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 export const Image = styled.img`
@@ -22,6 +27,11 @@ export const Image = styled.img`
   height: auto;
   aspect-ratio: 16/9;
   border-radius: 10px 0 0 10px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
 `;
 
 export const Content = styled.div`
@@ -34,6 +44,10 @@ export const Name = styled.h3`
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
 `;
 
 export const Tech = styled.span`
@@ -44,6 +58,10 @@ export const Tech = styled.span`
   border-radius: 3px;
   margin-right: 0.5rem;
   color: black;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem
+  }
 `;
 
 export const Description = styled.p`
