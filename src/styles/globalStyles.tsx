@@ -1,5 +1,5 @@
-import styled, { createGlobalStyle, css } from 'styled-components';
-import Theme from './theme';
+import styled, { createGlobalStyle, css } from "styled-components";
+import Theme from "./theme";
 
 const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     * {
@@ -9,67 +9,72 @@ const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
         font-family: 'Red Hat Display';
     }
     html {
-        color: ${props => props.theme.text};
-        background: ${props => props.theme.body};
+        color: ${(props) => props.theme.text};
+        background: ${(props) => props.theme.body};
     }
 `;
 
 export const Container = styled.div`
-    width: 100%;
-    max-width: 1250px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 8rem;
+  width: 100%;
+  max-width: 1250px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 8rem;
 
-    @media screen and (max-width: 960px) {
-        padding-right: 30px;
-        padding-left: 30px;
-    }
+  @media screen and (max-width: 960px) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 `;
 
 const buttonStyles = css`
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
-    padding: 7px 15px;
-    margin-right: 10px;
-    font-size: 1.1rem;
-    border-radius: 20px;
+  padding: 7px 15px;
+  margin-right: 10px;
+  font-size: 1.1rem;
+  border-radius: 20px;
 
-    appearance: none;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 300ms ease;
+  appearance: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 300ms ease;
 
-    > * {
-        margin-right: 8px;
-    }
+  > * {
+    margin-right: 8px;
+  }
 `;
 
 export const Link = styled.a<{ theme: Theme }>`
-    color: ${props => props.theme.primary};
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 200ms ease;
-    &:hover {
-        opacity: 0.7;
-    }
-`
+  color: ${(props) => props.theme.primary};
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 200ms ease;
+  &:hover {
+    opacity: 0.7;
+  }
+`;
 
 export const Button = styled.a<{ theme: Theme; secondary: boolean }>`
-    ${buttonStyles}
+  ${buttonStyles}
 
-    color: ${props => (props.secondary ? props.theme.black : props.theme.white)};
-    background: ${props => (props.secondary ? props.theme.white : props.theme.primary)};
-    border: 1px solid ${props => (props.secondary ? props.theme.black : props.theme.primary)};
-    margin-right: 20px;
+  color: ${(props) =>
+    props.secondary ? props.theme.black : props.theme.white};
+  background: ${(props) =>
+    props.secondary ? props.theme.white : props.theme.primary};
+  border: 1px solid
+    ${(props) => (props.secondary ? props.theme.black : props.theme.primary)};
+  margin-right: 20px;
 
-    &:hover {
-        color: ${props => (props.secondary ? props.theme.hover : props.theme.white)};
-        background: ${props => (props.secondary ? props.theme.white : props.theme.hover)};
-        border-color: ${props => props.theme.hover};
-    }
+  &:hover {
+    color: ${(props) =>
+      props.secondary ? props.theme.hover : props.theme.white};
+    background: ${(props) =>
+      props.secondary ? props.theme.white : props.theme.hover};
+    border-color: ${(props) => props.theme.hover};
+  }
 `;
 
 export default GlobalStyle;

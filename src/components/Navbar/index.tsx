@@ -46,6 +46,7 @@ const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
             {navData.navItems.map((item) => (
               <NavLink
                 to={item.id}
+                href={item.id}
                 smooth={true}
                 duration={1000}
                 offset={-100}
@@ -64,7 +65,9 @@ const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
               Open Resume
             </ResumeButton>
           </NavMenu>
+          <label htmlFor="themeToggle"></label>
           <ThemeToggle
+            id="themeToggle"
             type="checkbox"
             onChange={toggleTheme}
             checked={isDark}

@@ -8,7 +8,7 @@ interface Props {
 const ProjectCard = ({ project }: Props): JSX.Element => {
   return (
     <Card href={project.href} target="__blank">
-      <Image src={project.image} />
+      <Image src={project.image} alt={`My ${project.name} project`} />
       <Content>
         <Name>{project.name}</Name>
         <div>

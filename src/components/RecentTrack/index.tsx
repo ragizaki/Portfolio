@@ -8,7 +8,7 @@ const RecentTrack = ({ track }: Props): JSX.Element => {
   console.log;
   return (
     <TrackContainer href={track.href} target="__blank">
-      <TrackImage src={track.image}></TrackImage>
+      <TrackImage src={track.image} alt={`${track.name} by ${track.artist}`} />
       <div style={{ marginLeft: "1rem" }}>
         <TrackTitle className="child">{track.name}</TrackTitle>
         <TrackArtist className="child">{track.artist}</TrackArtist>

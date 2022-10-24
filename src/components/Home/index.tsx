@@ -47,7 +47,7 @@ const Home = ({ track }: Props): JSX.Element => {
       <Socials>
         {socials.map((social) => (
           <Button
-            secondary={social.secondary}
+            secondary={true}
             key={social.id}
             href={social.href}
             target="_blank"
