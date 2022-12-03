@@ -33,7 +33,7 @@ export const CompanyImage = styled.img`
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
-  border: 0.1rem solid ${(props) => props.theme.text};
+  border: 0.1rem solid white;
 
   @media screen and (max-width: 768px) {
     display: none;

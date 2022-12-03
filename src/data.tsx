@@ -15,7 +15,7 @@ export const navData = {
 export const homeData = {
   heading: "Zaki Machfj",
   isLooking: true,
-  term: "Winter 2023",
+  term: "Summer 2023",
   position: "Software Developer",
   company: {
     name: "Dejero Labs",
@@ -40,6 +40,23 @@ export const homeData = {
 };
 
 export const experienceData = [
+  {
+    id: 3,
+    company: {
+      name: "Empire Life",
+      website: "https://www.empire.ca/",
+      logo: "https://pbs.twimg.com/profile_images/1131648169677398017/oP-TmlWA_400x400.png",
+    },
+    position: "Software Developer",
+    tenure: "Jan - Apr. 2022",
+    location: "",
+    tools: [],
+    body: (
+      <div>
+        <p>Incoming Software Developer on the Empire Engineering Team!</p>
+      </div>
+    ),
+  },
   {
     id: 2,
     company: {
