@@ -8,7 +8,7 @@ import {
   NavMenu,
   MenuIcon,
   ResumeButton,
-  ThemeToggle,
+  ThemeButton,
 } from "./styles";
 
 import { navData } from "../../data";
@@ -16,6 +16,8 @@ import Resume from "../../assets/Resume.pdf";
 
 // Icon Configuration
 import { FaBars, FaTimes } from "react-icons/fa";
+import { BsSun } from "react-icons/bs";
+import { BiMoon } from "react-icons/bi";
 import { IconContext } from "react-icons/lib";
 import { ThemeContext } from "styled-components";
 
@@ -66,12 +68,9 @@ const Navbar = ({ isDark, toggleTheme }: Props): JSX.Element => {
             </ResumeButton>
           </NavMenu>
           <label htmlFor="themeToggle"></label>
-          <ThemeToggle
-            id="themeToggle"
-            type="checkbox"
-            onChange={toggleTheme}
-            checked={isDark}
-          />
+          <ThemeButton onClick={toggleTheme}>
+            {isDark ? <BsSun /> : <BiMoon />}
+          </ThemeButton>
           <MenuIcon onClick={handleMenuClick}>
             {menuOpen ? <FaTimes /> : <FaBars />}
           </MenuIcon>

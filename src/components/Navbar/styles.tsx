@@ -132,3 +132,11 @@ export const ThemeToggle = styled.input<{ theme: Theme }>`
     right: 5rem;
   }
 `;
+
+export const ThemeButton = styled.span`
+  width: 1rem;
+  height: 1rem;
+  &:hover {
+    cursor: pointer;
+  }
+`;
