@@ -6,7 +6,7 @@ export const ExperienceContainer = styled.div`
   margin: 3rem 0 4rem 0;
 
   @media (max-width: 500px) {
-    margin-top: 15rem;
+    margin-top: 4rem;
   }
 `;
 
