@@ -80,4 +80,5 @@ export const Body = styled.div`
 
 export const Tools = styled.p`
   margin-bottom: 1rem;
+  font-size: 1.1rem;
 `;

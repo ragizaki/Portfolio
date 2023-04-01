@@ -28,9 +28,7 @@ const Experience = (): JSX.Element => {
             </Role>
             <Location>{role.location}</Location>
             {role.tools.length ? (
-              <Tools>
-                Tools: <i>{role.tools.join(", ")}</i>
-              </Tools>
+              <Tools>Tools: {role.tools.join(", ")}</Tools>
             ) : null}
 
             <Body>{role.body}</Body>
