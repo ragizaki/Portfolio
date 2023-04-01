@@ -5,12 +5,7 @@ export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  padding-top: 1rem;
   height: fit-content;
-
-  @media screen and (min-width: 768px) and (max-width: 900px) {
-    padding: 0px;
-  }
 `;
 
 export const Heading = styled.h1`

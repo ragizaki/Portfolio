@@ -38,9 +38,8 @@ const Home = ({ track }: Props): JSX.Element => {
       <div>
         <TagItem>
           {/* I love building high-quality tools that are user-friendly and meaningful. <br /> */}
-          Currently learning <strong>Next.js</strong>, <strong>C++</strong>,{" "}
-          <strong>Golang</strong> and <strong>AWS</strong> to create cool
-          projects in my free time.
+          Currently learning <strong>Next.js</strong> to build fullstack apps,
+          and deep learning with <strong>PyTorch</strong>.
         </TagItem>
       </div>
 
