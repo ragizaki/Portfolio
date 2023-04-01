@@ -49,11 +49,14 @@ export const experienceData = [
     },
     position: "Software Developer",
     tenure: "Jan - Apr. 2022",
-    location: "",
-    tools: [],
+    location: "Kingston, ON",
+    tools: ["React", "Django", "Docker", "Terraform"],
     body: (
       <div>
-        <p>Incoming Software Developer on the Empire Engineering Team!</p>
+        <p>
+          Shipping fullstack features for the company's IAM team with React,
+          Django, Docker and Terraform.
+        </p>
       </div>
     ),
   },
@@ -66,7 +69,7 @@ export const experienceData = [
     },
     position: "Software Developer",
     tenure: "May - Aug. 2022",
-    location: "410 Albert Street - Waterloo, ON",
+    location: "Waterloo, ON",
     tools: ["Ruby on Rails", "Angular", "MySQL", "Golang"],
     body: (
       <div>
@@ -154,7 +157,7 @@ export const projectData: Project[] = [
     name: "IconGPT",
     technologies: ["Next.js", "TypeScript", "Prisma"],
     description:
-      "A web app built to design stunning icons with OpenAI's DALL-E-2 API.",
+      "A web app built with Next.js to design stunning icons with OpenAI's DALL-E-2 API. Supports Google SSO.",
     image:
       "https://user-images.githubusercontent.com/43770239/226809384-68d4b61a-a079-437f-933f-28ff2ef020ab.png",
     href: "https://github.com/ragizaki/IconGPT",
