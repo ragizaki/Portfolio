@@ -3,7 +3,7 @@ import Theme from "../../../styles/theme";
 
 export const Card = styled.a<{ theme: Theme }>`
   display: flex;
-  width: 80%;
+  width: 70%;
   margin: auto;
   border: 1px solid ${(props) => props.theme.text};
   border-radius: 10px;
@@ -23,9 +23,8 @@ export const Card = styled.a<{ theme: Theme }>`
 `;
 
 export const Image = styled.img`
-  width: 40%;
+  width: 30%;
   height: auto;
-  aspect-ratio: 16/9;
   border-radius: 10px 0 0 10px;
 
   @media (max-width: 768px) {
