@@ -72,29 +72,13 @@ export const experienceData = [
       <div>
         <p>
           I had an amazing time at Dejero. I had the pleasure to work in an
-          amazing team culture and meet some amazing people along the way. I
-          wanted to thank Jeremy and Amanda for their mentorship and for giving
-          me many opportunities to create meaningful work and learn new things.
-        </p>
-        <br />
-        <p>
+          amazing team culture and meet some amazing people along the way.
           During this internship, I got the chance to work closely with Rails
           and Angular to create fullstack features for the company's online
           product{" "}
-          <Link href="https://www.dejero.com/services/control">Control.</Link>{" "}
-          In particular, one of my biggest tickets was redesigning and
-          implementing the app's 2FA system to meet the DSLA certifications
-          before the end of the quarter. Most of the work was done in Rails and
-          Golang, setting up new routes and endpoints for different cases, as
-          well as adding UI features with Angular. I worked closely with Jeremy,
-          the Senior Web Developer, and presented the finished product at the
-          monthly stakeholders meeting.
-        </p>
-        <br />
-        <p>
-          It was one of the largest projects I've been involved with to date,
-          and I learned invaluable lessons about design, testing, and
-          implementing a new feature in a large codebase.
+          <Link href="https://www.dejero.com/services/control">Control.</Link> I
+          implemented the company's new 2FA system, and created Golang API
+          routes for the 2FA authentication
         </p>
       </div>
     ),
@@ -119,27 +103,12 @@ export const experienceData = [
     body: (
       <div>
         <p>
-          My first internship at Waterloo as a university student, my experience
-          at Quill taught me a lot about working in a dynamic, fast-paced
-          startup environment. I learned to be self-reliant, quick on my feet,
-          and to pick up new technologies quickly.
-        </p>
-        <br />
-        <p>
-          Most of my work was done on the frontend. In particular, I built UI
-          components from desinger mockups in Figma, for the company's online
-          podcasting tool. This work included building a signup page for new
-          users, a podcast player, as well as charts with chart.js to visualize
-          key podcast retention metrics. It was my first time using TailwindCSS
-          and Alpine.js, but I ended up throughly enjoying them, and I use
-          Tailwind heavily for styling to this day.
-        </p>
-        <br />
-        <p>
-          I also got some opportunities to work with the backend. I worked
-          closely with the CTO to learn Rails, as well as setting up a backend
-          to handle user registrations. I also had a chance to work with AWS EC2
-          to be familiar with the product's deployment process.
+          Quill taught me a lot about working in a dynamic, fast-paced startup
+          environment. I learned to be self-reliant, quick on my feet, and to
+          pick up new technologies quickly. I built UI components from desinger
+          mockups in Figma, for the company's online podcasting tool, including
+          building a registration page, a cusotm podcast player, and interactive
+          charts with Ruby on Rails, Postgres and TailwindCSS.
         </p>
       </div>
     ),
@@ -157,14 +126,12 @@ export const experienceData = [
     tools: ["React", "Redux", "TypeScript", "MaterialUI"],
     body: (
       <p>
-        One of my first experiences as a developer was when I volunteered as a
-        frontend developer for Glenforest STEM, one of my highschool clubs
-        focused on advocating for the importance of STEM programs. Volunteering
-        here was one of the main factors behind my passion for software
-        development and pursuing it full time as a career, and I'm really glad
-        to have met the people I did and gained such valuable experience along
-        the way. It was one of the first times I used React profesionally, and I
-        fell in love with its reusability and simplicity.
+        My first experience as a developer was when I volunteered as a frontend
+        developer for Glenforest STEM, a club focused on advocating for the
+        importance of STEM programs. Volunteering here was one of the main
+        factors behind my passion for software development and pursuing it full
+        time as a career. I used React and Redux to manage the company's main
+        website, and render members' info, as well as upcoming events.
       </p>
     ),
   },
@@ -184,12 +151,13 @@ export const projectData: Project[] = [
 
   {
     id: 2,
-    name: "Personal Website",
-    technologies: ["React", "TypeScript"],
+    name: "IconGPT",
+    technologies: ["Next.js", "TypeScript", "Prisma"],
     description:
-      "My website, built with React and TypeScript. Check in regularly for updates as I grow as a developer!",
-    image: PersonalWebsiteImage,
-    href: "https://github.com/ragizaki/zaki",
+      "A web app built to design stunning icons with OpenAI's DALL-E-2 API.",
+    image:
+      "https://user-images.githubusercontent.com/43770239/226809384-68d4b61a-a079-437f-933f-28ff2ef020ab.png",
+    href: "https://github.com/ragizaki/IconGPT",
   },
   {
     id: 3,
