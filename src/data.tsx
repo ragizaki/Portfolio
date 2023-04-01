@@ -45,7 +45,7 @@ export const experienceData = [
     company: {
       name: "Empire Life",
       website: "https://www.empire.ca/",
-      logo: "https://pbs.twimg.com/profile_images/1131648169677398017/oP-TmlWA_400x400.png",
+      logo: "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/zfpoor4oosehrckwwfde",
     },
     position: "Software Developer",
     tenure: "Jan - Apr. 2022",
