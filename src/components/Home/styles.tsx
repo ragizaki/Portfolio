@@ -6,11 +6,10 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   justify-content: start;
   padding-top: 1rem;
-  height: calc(100vh - 80px);
+  height: fit-content;
 
   @media screen and (min-width: 768px) and (max-width: 900px) {
     padding: 0px;
-    margin-bottom: -16rem;
   }
 `;
 

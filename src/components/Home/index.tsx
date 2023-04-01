@@ -60,8 +60,7 @@ const Home = ({ track }: Props): JSX.Element => {
       {track && (
         <>
           <TagItem style={{ marginTop: "2rem", marginBottom: "0.5rem" }}>
-            Here's the last song I listened to on <strong>Spotify</strong>{" "}
-            (hopefully it's not too embarassing)
+            Here's the last song I listened to on <strong>Spotify</strong>
           </TagItem>
           <RecentTrack track={track} />
         </>
