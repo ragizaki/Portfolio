@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Home = ({ track }: Props): JSX.Element => {
-  const { heading, socials, position, company, isLooking, term } = homeData;
+  const { heading, socials, position, company, isLooking } = homeData;
   return (
     <HomeContainer id="about">
       <Heading>{heading}</Heading>
@@ -17,11 +17,12 @@ const Home = ({ track }: Props): JSX.Element => {
         Software Developer | CS @ UWaterloo
       </TagItem>
       <TagItem>
-        Hey there 👋 I'm a 3rd year CS student at UWaterloo. I love playing ⚽
-        and listening to 🎵 in my free time!{" "}
+        Hey there 👋 I'm a 3rd year CS student at UWaterloo. I enjoy playing ⚽
+        and snowboarding in my free time.
         {isLooking ? (
           <span>
-            I'm currently seeking SWE internships for <strong>{term}</strong>.
+            I'm currently seeking SWE internships for <strong>Fall 2023</strong>
+            .
           </span>
         ) : (
           <span>
