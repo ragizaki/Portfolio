@@ -183,6 +183,16 @@ export const projectData: Project[] = [
   },
   {
     id: 3,
+    name: "Twitter Fact Checker",
+    technologies: ["React", "GPT 3.5", "ChakraUI"],
+    description:
+      "Chrome extension to fact-check tweets in real-time using OpenAI'S GPT-3.5 Completion and Moderations APIs.",
+    image:
+      "https://cdn-icons-png.flaticon.com/512/124/124021.png",
+    href: "https://github.com/ragizaki/TwitterFactCheck",
+  },
+  {
+    id: 4,
     name: "Nature Camp",
     technologies: ["Next.js", "Prisma", "MySQL", "NextAuth"],
     description:
