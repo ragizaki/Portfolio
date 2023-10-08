@@ -41,13 +41,32 @@ export const homeData = {
 
 export const experienceData = [
   {
+    id: 4,
+    company: {
+      name: "Deliverect",
+      website: "https://www.deliverect.com/en-ca",
+      logo: "https://images.ctfassets.net/2d5q1td6cyxq/7iuXLBrzKqqtKg3CtPnafb/f3f0e030fdf93c0bcda47939b57df3cd/Deliverect-ICON-2020_02_02__1_.png",
+    },
+    position: "Backend Developer Intern",
+    tenure: "Sept 2023 - Present",
+    location: "Toronto, ON",
+    tools: ["Python", "Flask", "Docker", "Kafka"],
+    body: (
+      <div>
+        <p>
+          Overhauling the current payment system to support multiple payment methods using Python, and Kafka for data processing and event-streaming.
+        </p>
+      </div>
+    ),
+  },
+  {
     id: 3,
     company: {
       name: "Empire Life",
       website: "https://www.empire.ca/",
       logo: "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/zfpoor4oosehrckwwfde",
     },
-    position: "Software Developer",
+    position: "Software Developer Intern",
     tenure: "Jan - Apr. 2022",
     location: "Kingston, ON",
     tools: ["React", "Django", "Docker", "Terraform"],
@@ -67,7 +86,7 @@ export const experienceData = [
       website: "https://www.dejero.com/",
       logo: "https://pbs.twimg.com/profile_images/1082337275386740736/0kS2y2Oq_400x400.jpg",
     },
-    position: "Software Developer",
+    position: "Software Developer Intern",
     tenure: "May - Aug. 2022",
     location: "Waterloo, ON",
     tools: ["Ruby on Rails", "Angular", "MySQL", "Golang"],
@@ -89,7 +108,7 @@ export const experienceData = [
   {
     id: 1,
     company: {
-      name: "Quill Podcasting",
+      name: "Quill Podcasting Intern",
       website: "https://www.quillpodcasting.com",
       logo: "https://uploads-ssl.webflow.com/5d6af44f068031b45b8e83a5/5dd68aa836a0d4abf9966376_White%20on%20Purple.png",
     },
