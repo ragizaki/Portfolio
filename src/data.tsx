@@ -161,6 +161,14 @@ export const experienceData = [
 
 export const projectData: Project[] = [
   {
+    id: 0,
+    name: "Chess Openings Recommender",
+    technologies: ["Jupyter Notebook", "Numpy", "Pandas"],
+    description: "A reccommendation algorithm based on collaborative filtering and cosine similarity, to reccommend users new openings",
+    image: "https://i.pinimg.com/originals/3e/5f/aa/3e5faa675ecad973342860eaea2eafad.png",
+    href: "https://github.com/ragizaki/ChessOpeningsRecommender"
+  },
+  {
     id: 1,
     name: "Fantasy Football Notifier",
     technologies: ["Python", "BeautifulSoup4"],
@@ -170,7 +178,6 @@ export const projectData: Project[] = [
       "https://th.bing.com/th/id/R.66ee2f04c1dc70ba8cb5ec9f780990d1?rik=jZThfaUvlkGfhQ&pid=ImgRaw&r=0",
     href: "https://github.com/ragizaki/fantasy-football-notifier",
   },
-
   {
     id: 2,
     name: "IconGPT",
