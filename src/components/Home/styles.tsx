@@ -47,3 +47,14 @@ export const Company = styled.a<{ theme: Theme }>`
 export const Socials = styled.div`
   display: flex;
 `;
+
+export const ChessLink = styled.a<{ theme: Theme }>`
+  color: ${(props) => props.theme.primary};
+  text-decoration: underline;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+  &:hover {
+    opacity: 0.9;
+  }
+`;

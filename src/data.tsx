@@ -48,13 +48,20 @@ export const experienceData = [
       logo: "https://images.ctfassets.net/2d5q1td6cyxq/7iuXLBrzKqqtKg3CtPnafb/f3f0e030fdf93c0bcda47939b57df3cd/Deliverect-ICON-2020_02_02__1_.png",
     },
     position: "Backend Developer Intern",
-    tenure: "Sept 2023 - Present",
+    tenure: "Sept 2023 - December 2023",
     location: "Toronto, ON",
-    tools: ["Python", "Flask", "Docker", "Kafka"],
+    tools: ["FastAPI", "Flask", "Docker", "RabbitMQ", "SQL"],
     body: (
       <div>
         <p>
-          Overhauling the current payment system to support multiple payment methods using Python, and Kafka for data processing and event-streaming.
+          I was one of the lead developers of a new billing microservice to
+          support a new payment system with NetSuite. I worked with FastAPI to
+          implement RESTFul api endpoints, and implemented asynchronous routes
+          to handle a 60% increase in traffic. Additionally, I took owernship of
+          a data analytics project to track the company's KPIs. I used Flask and
+          RabbitMQ to create a data pipeline that parallelized POS aggregation
+          tasks such as average order value, order time, etc, increasing
+          throughput by ~550%.
         </p>
       </div>
     ),
@@ -67,14 +74,23 @@ export const experienceData = [
       logo: "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/zfpoor4oosehrckwwfde",
     },
     position: "Software Developer Intern",
-    tenure: "Jan - Apr. 2022",
+    tenure: "Jan - August. 2022",
     location: "Kingston, ON",
     tools: ["React", "Django", "Docker", "Terraform"],
     body: (
       <div>
         <p>
-          Shipping fullstack features for the company's IAM team with React,
-          Django, Docker and Terraform.
+          My biggest project at Empire Life was designing a CI/CD pipeline to
+          automate the creation of Auth0 resources for the company. Our dev
+          teams use Auth0 to keep a consistent branding page across all of
+          Empire's apps, but the problem is that all the code was hosted on
+          Auth0, and any dev could go in and alter something. There was no
+          concept of tracking changes, and it was hard to keep track of who was
+          doing what. I used GitHub Actions to create a CI/CD pipeline that
+          would automatically create Auth0 resources from GitHub PR's, and
+          implemented Python and bash scripts to send the resources to Terraform
+          Cloud to be deployed. I returned as a part-time student to ship the
+          pipeline to production.
         </p>
       </div>
     ),
@@ -164,9 +180,11 @@ export const projectData: Project[] = [
     id: 0,
     name: "Chess Openings Recommender",
     technologies: ["Jupyter Notebook", "Numpy", "Pandas"],
-    description: "A reccommendation algorithm based on collaborative filtering and cosine similarity, to reccommend users new openings",
-    image: "https://i.pinimg.com/originals/3e/5f/aa/3e5faa675ecad973342860eaea2eafad.png",
-    href: "https://github.com/ragizaki/ChessOpeningsRecommender"
+    description:
+      "A reccommendation algorithm based on collaborative filtering and cosine similarity, to reccommend users new openings",
+    image:
+      "https://i.pinimg.com/originals/3e/5f/aa/3e5faa675ecad973342860eaea2eafad.png",
+    href: "https://github.com/ragizaki/ChessOpeningsRecommender",
   },
   {
     id: 1,
@@ -194,8 +212,7 @@ export const projectData: Project[] = [
     technologies: ["React", "GPT 3.5", "ChakraUI"],
     description:
       "Chrome extension to fact-check tweets in real-time using OpenAI'S GPT-3.5 Completion and Moderations APIs.",
-    image:
-      "https://cdn-icons-png.flaticon.com/512/124/124021.png",
+    image: "https://cdn-icons-png.flaticon.com/512/124/124021.png",
     href: "https://github.com/ragizaki/TwitterFactCheck",
   },
   {

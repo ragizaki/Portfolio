@@ -1,5 +1,12 @@
 import { homeData } from "../../data";
-import { HomeContainer, Heading, TagItem, Company, Socials } from "./styles";
+import {
+  HomeContainer,
+  Heading,
+  TagItem,
+  Company,
+  Socials,
+  ChessLink,
+} from "./styles";
 import { Button } from "../../styles/globalStyles";
 import RecentTrack from "../RecentTrack";
 import { Track } from "../../lib/types";
@@ -13,16 +20,19 @@ const Home = ({ track }: Props): JSX.Element => {
   return (
     <HomeContainer id="about">
       <Heading>{heading}</Heading>
-      <TagItem style={{ fontSize: "2rem", opacity: 0.8, marginBottom: "2rem" }}>
-        Software Developer | CS @ UWaterloo
-      </TagItem>
       <TagItem>
-        Hey there 👋 I'm a 3rd year CS student at UWaterloo. I enjoy playing ⚽
-        and snowboarding in my free time.
+        Hey there 👋 I'm a 4th year CS student at UWaterloo. I enjoy playing ⚽,
+        🏂 and ♟️ in my free time (check me out on{" "}
+        <ChessLink href="https://www.chess.com/member/zakixd" target="_blank">
+          chess.com
+        </ChessLink>
+        ). I have a passion for ML and AI, and exploring their applications in
+        the real world.
         {isLooking ? (
           <span>
-            I'm currently seeking SWE internships for <strong>Fall 2023</strong>
-            .
+            {" "}
+            I'm currently seeking SWE internships for{" "}
+            <strong>Summer & Fall 2024</strong>.
           </span>
         ) : (
           <span>
@@ -39,8 +49,10 @@ const Home = ({ track }: Props): JSX.Element => {
       <div>
         <TagItem>
           {/* I love building high-quality tools that are user-friendly and meaningful. <br /> */}
-          Currently learning <strong>Next.js</strong> to build fullstack apps,
-          and deep learning with <strong>PyTorch</strong>.
+          Currently working on building computer vision models for 3D chessboard
+          detection and recommendation systems for chess openings with{" "}
+          <strong>PyTorch</strong> and <strong>Tensorflow</strong>. Feel free to
+          check my work out below.
         </TagItem>
       </div>
 
